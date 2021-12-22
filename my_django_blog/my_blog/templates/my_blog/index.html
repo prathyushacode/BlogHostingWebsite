@@ -1,0 +1,31 @@
+{% extends "my_blog/base.html" %}
+
+{% block title%} 
+Welcome
+{% endblock %}
+{% block content%}
+
+{% if user.is_authenticated %}
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Travel</h2>
+      <p><a class="btn btn-default" href="{% url 'travel' %}" role="button">View details &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+      <h2>Entertainment</h2>
+      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+   </div>
+    <div class="col-md-4">
+      <h2>Art</h2>
+      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="container">
+  <h4> Create an account to view blog posts </h4>
+</div>
+{% endif %}
+{% endblock %}
